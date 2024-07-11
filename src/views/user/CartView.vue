@@ -40,7 +40,7 @@ const changeQuantity = (event, index) => {
                                         <p>{{ item.price }} ฿</p>
                                     </div>
                                     <div class="">
-                                        <select @change="changeQuantity($event, index)" class="w-1/2 p-1 px-3 rounded-md">
+                                        <select v-model="item.quantity" @change="changeQuantity($event, index)" class="w-1/2 p-1 px-3 rounded-md">
                                             <option v-for="quantity in [1, 2, 3, 4, 5]">{{ quantity }}</option>
                                         </select>
                                     </div>

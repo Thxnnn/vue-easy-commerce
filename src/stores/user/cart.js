@@ -3,18 +3,7 @@ import { defineStore } from "pinia";
 
 export const useCartStore = defineStore('cart', {
     state: () => ({
-        items: [
-            {
-                name: "coffee",
-                imageUrl:
-                  "https://images.unsplash.com/photo-1642778445549-92ec4fdcbb16?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                quantity: 10,
-                about: "coffee",
-                status: "open",
-                price: 100,
-                quantity: 1
-              },
-        ]
+        items: []
     }),
     getters: {
         summaryQuantity (state) {
@@ -27,15 +16,36 @@ export const useCartStore = defineStore('cart', {
         }
     },
     actions: {
+        loadCart () {
+            const previousCart = localStorage.getItem('cart-data')
+            if (previousCart) {
+                this.items = JSON.parse(previousCart)
+            }
+        },
         addToCart (productData) {
-            productData.quantity = 1
-            this.items.push(productData);
+
+            const findProductIndex = this.items.findIndex(item => {
+                return item.name === productData.name
+            })
+
+            if (findProductIndex < 0) {
+                productData.quantity = 1
+                this.items.push(productData);
+            } else {
+                const currentItem = this.items[findProductIndex]
+                this.updateQuantity(findProductIndex, currentItem.quantity + 1)
+            }
+
+            
+            localStorage.setItem("cart-data", JSON.stringify(this.items));
         },
         updateQuantity (index, quantity) {
             this.items[index].quantity = quantity;
+            localStorage.setItem("cart-data", JSON.stringify(this.items));
         },
         removeItemInCart (index) {
             this.items.splice(index, 1);
+            localStorage.removeItem("cart-data", JSON.stringify(this.items));
         },
     }
 })
