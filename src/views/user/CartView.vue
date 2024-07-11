@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router';
 
 import UserLayout from '@/layouts/UserLayout.vue';
 import Close from '@/components/icons/Close.vue';
@@ -18,9 +19,9 @@ const changeQuantity = (event, index) => {
 
 <template>
     <UserLayout>
-        <h1>Shopping Cart</h1>
-        <div class="flex">
-            <div class="flex-auto w-64 bg-base-200 p-4 divide-y divide-slate-500">
+        <h1 class="text-2xl font-bold mb-3">Shopping Cart</h1>
+        <div class="flex flex-col md:flex-row">
+            <div class="flex-auto w-full md:w-64 bg-base-200 p-4 divide-y divide-slate-500">
                 <div v-if="cartStore.items.length === 0" class="">
                     Cart is empty
                 </div>
@@ -40,7 +41,7 @@ const changeQuantity = (event, index) => {
                                         <p>{{ item.price }} ฿</p>
                                     </div>
                                     <div class="">
-                                        <select v-model="item.quantity" @change="changeQuantity($event, index)" class="w-1/2 p-1 px-3 rounded-md">
+                                        <select v-model="item.quantity" @change="changeQuantity($event, index)" class="w-1/2 p-1 md:px-3 rounded-md">
                                             <option v-for="quantity in [1, 2, 3, 4, 5]">{{ quantity }}</option>
                                         </select>
                                     </div>
@@ -58,7 +59,7 @@ const changeQuantity = (event, index) => {
             </div>
 
 
-            <div class="flex-auto w-32 bg-slate-200 p-4">
+            <div class="flex-auto w-full md:w-32 bg-slate-200 p-4">
                 <div class="">
                     <p>Order summary</p>
                     <div class="my-4 divide-y divide-slate-500">
@@ -74,8 +75,10 @@ const changeQuantity = (event, index) => {
                             <p>ราคาทั้งสิ้น</p>
                             <p>{{ cartStore.summaryPrice }}</p>
                         </div>
-                        <button class="w-full my-3 p-2 bg-[#000] text-white">ชำระเงิน</button>
+                        
                     </div>
+                    <RouterLink :to="{ name: 'checkout' }"  class="w-full btn btn-neutral text-white">ชำระเงิน</RouterLink>
+
                 </div>
             </div>
         </div>

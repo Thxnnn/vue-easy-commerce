@@ -24,7 +24,7 @@ const login = () => {
     localStorage.setItem('isLoginedIn', true)
 }
 
-const logoot = () => {
+const logout = () => {
     isLoginedIn.value = false;
     localStorage.removeItem('isLoginedIn')
 
@@ -48,7 +48,7 @@ const handleSearch = (event) => {
     <div class="container mx-auto">
         <div class="navbar bg-base-100">
             <div class="flex-1">
-                <RouterLink :to="{ name: 'home' }" class="btn btn-ghost text-xl">Meow Shop</RouterLink>
+                <RouterLink :to="{ name: 'home' }" class="btn btn-ghost text-xl px-0">Meow Shop</RouterLink>
             </div>
             <div class="flex-none gap-2">
                 <div class="form-control">
@@ -101,7 +101,7 @@ const handleSearch = (event) => {
                             </RouterLink>
                         </li>
                         <li>
-                            <a @click="logoot()">
+                            <a @click="logout()">
                                 Logout
                             </a>
                         </li>
