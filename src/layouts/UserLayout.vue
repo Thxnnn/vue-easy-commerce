@@ -94,7 +94,7 @@ const handleSearch = (event) => {
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full">
                             <img alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                src="https://i.pinimg.com/564x/20/55/df/2055df0485f28aa1d633de4a51cdb7d3.jpg" />
                         </div>
                     </div>
                     <ul tabindex="0"

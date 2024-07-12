@@ -25,7 +25,7 @@ const addToCart = (product) => {
 
 <template>
     <UserLayout>
-        <div class="hero bg-base-200 h-96">
+        <div class="hero bg-base-200 h-52 md:h-96">
             <div class="hero-content text-center">
                 <div class="max-w-md">
                     <h1 class="text-5xl font-bold">Hello to Meow</h1>
