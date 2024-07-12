@@ -47,7 +47,7 @@ const userFromData = reactive({
 
 const Payment = () => {
     console.log(userFromData)
-    cartStore.checkout(userFromData)
+    cartStore.placeorder(userFromData)
     router.push({
         name: "success"
     })
@@ -67,7 +67,7 @@ const Payment = () => {
                         <div class="label">
                             <span class="label-text">{{ form.name }}</span>
                         </div>
-                        <textarea v-if="form.name === 'Address'" class="textarea textarea-bordered"
+                        <textarea v-if="form.name === 'Address'" v-model="userFromData[form.field]"  class="textarea textarea-bordered"
                             :placeholder="form.placeholder"></textarea>
                         <input v-else v-model="userFromData[form.field]" :type="form.type"
                             :placeholder="form.placeholder" class="input input-bordered w-full" />

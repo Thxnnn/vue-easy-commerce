@@ -8,8 +8,8 @@ import { useCartStore } from './stores/user/cart';
 const cartStore = useCartStore()
 
 onMounted(() => {
-  console.log("havs data")
   cartStore.loadCart()
+  
 })
 
 

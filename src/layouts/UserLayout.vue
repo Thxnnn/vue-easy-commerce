@@ -17,6 +17,7 @@ onMounted(() => {
     if (localStorage.getItem('isLoginedIn')) {
         isLoginedIn.value = true;
     }
+
 })
 
 const login = () => {
@@ -27,6 +28,9 @@ const login = () => {
 const logout = () => {
     isLoginedIn.value = false;
     localStorage.removeItem('isLoginedIn')
+    localStorage.removeItem('order-data')
+    localStorage.removeItem('cart-data')
+    window.location.reload()
 
 }
 
