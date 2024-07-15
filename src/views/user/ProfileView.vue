@@ -55,10 +55,10 @@ const updateProfile = () => {
 
 <template>
     <UserLayout>
-        <div class="w-3/4 mx-auto border-base-200 shadow-lg p-8 my-8">
+        <div class="md:w-3/4 md:mx-auto mx-4 border-base-200 rounded-lg shadow-lg p-8 my-8">
             <p class="text-2xl font-bold">My Profile</p>
 
-            <div class="">
+            <div class="mt-5">
                 <div class="flex flex-col items-center">
                     <div class="avatar">
                         <div class="w-24 rounded-full">
@@ -73,7 +73,7 @@ const updateProfile = () => {
                         <input v-if="form.type === 'file'" 
                             v-model="userFromData[form.field]" 
                             :type="form.type"
-                            class="file-input file-input-sm w-full text-center" 
+                            class="file-input file-input-sm w-full text-center mb-3" 
                             @change="handleFileUpload" />
 
                         <input v-else 

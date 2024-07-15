@@ -125,9 +125,7 @@ const handleSearch = (event) => {
                     </path>
                 </svg>
                 <p>
-                    ACME Industries Ltd.
-                    <br />
-                    Providing reliable tech since 1992
+                    Copyright © 2024
                 </p>
             </aside>
             <nav>

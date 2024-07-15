@@ -34,7 +34,7 @@ const orderSuccess = () => {
 
 <template>
     <UserLayout>
-        <div class="w-3/4 mx-auto border-base-200 shadow-lg p-4 my-8">
+        <div class="md:w-3/4 md:mx-auto mx-4 border-base-200 rounded-lg shadow-lg p-4 my-8">
             <div class="">
                 <p class="font-bold text-xl">Your order is sucessful !</p>
                 <p>Hi, {{ orderData.name }}</p>
@@ -42,7 +42,7 @@ const orderSuccess = () => {
                 
             </div>
             <div class="divider"></div>
-            <div class="grid grid-cols-4 gap-2">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
                 <div class="">
                     <p class="font-bold">Order date</p>
                     <p>{{ orderData.createDate }}</p>

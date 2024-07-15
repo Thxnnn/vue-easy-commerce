@@ -29,7 +29,7 @@ const addToCart = (product) => {
             <div class="hero-content text-center">
                 <div class="max-w-md">
                     <h1 class="text-5xl font-bold">Hello to Meow</h1>
-
+                    <p class="my-4">Enjoy your shopping with us</p>
                 </div>
             </div>
         </div>
